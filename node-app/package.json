@@ -1,0 +1,9 @@
+{
+  "name": "node-docker-practice",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A tiny Node.js HTTP app for Docker practice",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
