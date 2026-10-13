@@ -1,0 +1,10 @@
+services:
+  mysql:
+
+  node:
+
+volumes:
+  node-mysql-data:
+
+networks:
+  two-tier:
