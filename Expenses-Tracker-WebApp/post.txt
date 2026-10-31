@@ -1,0 +1,9 @@
+I recently Dockerized my Expenses Tracker Web App!
+
+The goal was to make the application easier to build and run in a consistent environment. I used a multi-stage Docker build for the Spring Boot application and Docker Compose to run it alongside MySQL.
+
+The app helps users securely manage expenses with authentication, CRUD operations, and filtering. The project is built with Java, Spring Boot, Spring Security, Spring Data JPA, MySQL, Thymeleaf, and Bootstrap.
+
+This was a great opportunity to get hands-on with containerizing a real application and connecting services with Docker Compose. I'm continuing to build my DevOps skills by applying them to projects.
+
+#Docker #DockerCompose #SpringBoot #Java #MySQL #DevOps #WebDevelopment #LearningByDoing
