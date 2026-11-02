@@ -1,0 +1,37 @@
+services:
+  db:
+    image: mysql
+    container_name: taskboard-db
+    volumes:
+      - db_data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: taskboard
+    healthcheck:
+      test: ["CMD", "mysqladmin","ping", "-h" , "localhost", "-uroot", "-ppassword"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 30s
+
+  backend:
+    build: ./backend
+    container_name: taskboard-backend
+    environment:
+      DB_HOST: db
+      DB_USER: root
+      DB_PASSWORD: password
+      DB_NAME: taskboard
+    depends_on:
+      - db
+      
+  frontend:
+    build: ./frontend
+    container_name: taskboard-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+
+volumes:
+  db_data:

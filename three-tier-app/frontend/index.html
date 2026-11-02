@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Taskboard</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand"><span class="logo">T</span><h1>Taskboard</h1></div>
+    <div class="tiers" id="tiers" aria-live="polite">
+      <span class="tier up"><i></i>Frontend</span>
+      <span class="link"></span>
+      <span class="tier" id="t-api"><i></i>API</span>
+      <span class="link"></span>
+      <span class="tier" id="t-db"><i></i>Database</span>
+      <span class="host" id="host"></span>
+    </div>
+  </header>
+
+  <main>
+    <section class="stats" id="stats"></section>
+
+    <section class="compose">
+      <form id="form">
+        <input id="title" placeholder="What needs to be done?" maxlength="160" required />
+        <input id="desc" placeholder="Details (optional)" />
+        <select id="priority" aria-label="Priority">
+          <option value="low">Low</option>
+          <option value="medium" selected>Medium</option>
+          <option value="high">High</option>
+        </select>
+        <button type="submit">Add task</button>
+      </form>
+      <input id="search" class="search" placeholder="Search tasks" aria-label="Search tasks" />
+    </section>
+
+    <section class="board" id="board"></section>
+  </main>
+
+  <div class="toast" id="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
